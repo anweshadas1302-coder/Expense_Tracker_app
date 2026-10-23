@@ -8,6 +8,13 @@ const uuid = Uuid();
 
 enum ExpenseCategory { food, travel, leisure, work }
 
+const categoryIcons = {
+  ExpenseCategory.food: Icons.restaurant,
+  ExpenseCategory.travel: Icons.flight_takeoff,
+  ExpenseCategory.leisure: Icons.movie,
+  ExpenseCategory.work: Icons.work,
+};
+
 class Expense {
   final String title;
   final double amount;
