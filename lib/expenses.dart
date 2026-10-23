@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'expenses_list.dart';
-import 'models/expense.dart';
+import '../../models/expense.dart';
+import '../widgets/expenses_list/expenses_list.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
 
   @override
-  State<Expenses> createState() {
-    return _ExpensesState();
-  }
+  State<Expenses> createState() => _ExpensesState();
 }
 
 class _ExpensesState extends State<Expenses> {
@@ -27,15 +25,17 @@ class _ExpensesState extends State<Expenses> {
       category: ExpenseCategory.leisure,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Flutter ExpenseTracker')),
       body: Column(
         children: [
           const Text('The chart'),
           Expanded(child: ExpensesList(expenses: _registeredExpenses)),
         ],
-      ), // Column
-    ); // Scaffold
+      ),
+    );
   }
 }
